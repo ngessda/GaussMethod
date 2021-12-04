@@ -37,7 +37,7 @@ namespace ConsoleApp3
         {
             double result = 1;
             //Проверка на вшивость(является ли матрица квадратной, имеются ли одинаковые строки ИЛИ одинаковые строки).
-            if (rows == colls && CheckMatrixRows() && CheckMatrixColls())
+            if (rows == colls)
             {
                 //Вызов метода для привидения матрицы к верхнетреугольному виду
                 ToStairs();
@@ -58,69 +58,69 @@ namespace ConsoleApp3
             }
             return result;
         }
-        //Метод для проверки на одинаковые строки. Вызывается в методе для определителя.
-        private bool CheckMatrixRows()
-        {
-            bool result = true;
-            int counter = 0;
-            for(int i = 0; i < rows - 1 && result == true; i++)
-            {
-                for(int j = i + 1; j < rows; j++)
-                {
-                    if(counter == colls)
-                    {
-                        result = false;
-                        break;
-                    }
-                    else
-                    {
-                        counter = 0;
-                        for (int k = 0; k < colls; k++)
-                        {
-                            if (value[i, k] == value[j, k])
-                            {
-                                counter++;
-                            }
-                            else
-                            {
-                                continue;
-                            }
-                        }
-                    }
-                }
-            }
-            return result;
-        }
-        //Метод для проверки на одинаковые столбцы. Вызывается в методе для определителя.
-        private bool CheckMatrixColls()
-        {
-            bool result = true;
-            int counter = 0;
-            for(int i = 0; i < colls - 1 && result == true; i++)
-            {
-                for(int j = i + 1; j < colls; j++)
-                {
-                    if (counter == rows)
-                    {
-                        result = false;
-                        break;
-                    }
+        ////Метод для проверки на одинаковые строки. Вызывается в методе для определителя.
+        //private bool CheckMatrixRows()
+        //{
+        //    bool result = true;
+        //    int counter = 0;
+        //    for(int i = 0; i < rows - 1 && result == true; i++)
+        //    {
+        //        for(int j = i + 1; j < rows; j++)
+        //        {
+        //            if(counter == colls)
+        //            {
+        //                result = false;
+        //                break;
+        //            }
+        //            else
+        //            {
+        //                counter = 0;
+        //                for (int k = 0; k < colls; k++)
+        //                {
+        //                    if (value[i, k] == value[j, k])
+        //                    {
+        //                        counter++;
+        //                    }
+        //                    else
+        //                    {
+        //                        continue;
+        //                    }
+        //                }
+        //            }
+        //        }
+        //    }
+        //    return result;
+        //}
+        ////Метод для проверки на одинаковые столбцы. Вызывается в методе для определителя.
+        //private bool CheckMatrixColls()
+        //{
+        //    bool result = true;
+        //    int counter = 0;
+        //    for(int i = 0; i < colls - 1 && result == true; i++)
+        //    {
+        //        for(int j = i + 1; j < colls; j++)
+        //        {
+        //            if (counter == rows)
+        //            {
+        //                result = false;
+        //                break;
+        //            }
 
-                    for(int k = 0; k < rows; k++)
-                    {
-                        if(value[k, i] == value[k, j])
-                        {
-                            counter++;
-                        }
-                        else
-                        {
-                            continue;
-                        }
-                    }
-                }
-            }
-            return result;
-        }
+        //            for(int k = 0; k < rows; k++)
+        //            {
+        //                if(value[k, i] == value[k, j])
+        //                {
+        //                    counter++;
+        //                }
+        //                else
+        //                {
+        //                    continue;
+        //                }
+        //            }
+        //        }
+        //    }
+        //    return result;
+        //}
         //Метод для привидения матрицы к верхнетреугольному виду
         private void ToStairs()
         {
